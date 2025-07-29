@@ -3,11 +3,11 @@ Create Flask Docker app through EC2 instance:
 
 **Commands to create Flask Docker app through EC2 instance**
 Step1 : Create an EC2 instance and connect
-    1  yum install -y docker        : command to install docker in server
-    2  docker --version             : command to check the docker version 
-    3  systemctl status docker      : command to check the status of docker
-    4  systemctl start docker       : command to start the docker
-    5  systemctl status docker
+    1  **yum install -y docker**        : command to install docker in server
+    2  **docker --version**             : command to check the docker version 
+    3  **systemctl status docker**      : command to check the status of docker
+    4  **systemctl start docker**       : command to start the docker
+    5  **systemctl status docker**
     6  docker info                  : to check detailed info about docker
     7  cd /home                     : switch to home directory
     9  mkdir flask-docker-app/      : create a new directory
