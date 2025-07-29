@@ -57,5 +57,5 @@ CMD ["python", "app.py"]
    20  **docker images**                                   : to verify docker images
    21  **docker run -d -p 5000:5000 flask-docker-app**     : to run the docker image
 
-   **Now check with public ip of instance "<public ip>:5000" to get the result as "Hello from Flask in Docker! Creating first Docker application through EC2"**
+   **Now check with public ip of instance "public ip:5000" to get the result as "Hello from Flask in Docker! Creating first Docker application through EC2"**
 
