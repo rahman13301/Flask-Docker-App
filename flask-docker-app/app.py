@@ -1,15 +1,12 @@
-# Use official Python image
-FROM python:3.9-slim
+from flask import Flask
 
-# Set working directory inside the container
-WORKDIR /app
+ app = Flask(__name__)
 
-# Copy the local files to container
-COPY . /app
+@app.route("/")
+def home():
+    return "Hello from Flask in Docker!"
 
-# Install Flask inside container
-RUN pip install flask
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
 
-# Run the Flask app
-CMD ["python", "app.py"]
 
