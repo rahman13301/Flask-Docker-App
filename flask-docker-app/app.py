@@ -1,10 +1,15 @@
-from flask import Flask
- 
-app = Flask(__name__)
- 
-@app.route("/")
-def home():
-    return "Hello from Flask in Docker! Creating first Docker application through EC2"
- 
-if __name__ == "__main__":
- app.run(host="0.0.0.0", port=5000)
+# Use official Python image
+FROM python:3.9-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy the local files to container
+COPY . /app
+
+# Install Flask inside container
+RUN pip install flask
+
+# Run the Flask app
+CMD ["python", "app.py"]
+
