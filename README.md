@@ -74,9 +74,12 @@ sudo docker build -t flask-docker-app .
 sudo docker images
 sudo docker run -d -p 5000:5000 flask-docker-app
 ```
+
+<img width="1226" height="564" alt="image" src="https://github.com/user-attachments/assets/2fe2df30-ee72-46f3-96a2-7b013f7de288" />
+
+
 <img width="984" height="188" alt="image" src="https://github.com/user-attachments/assets/3d098624-55a7-463f-9a95-15ae32f85de9" />
 
-<img width="832" height="145" alt="image" src="https://github.com/user-attachments/assets/7443bc41-6823-4883-87f7-7fb54a9035d5" />
 
 
 - **Note** : We will have to edit the inbound rules in the security group of our EC2, in order to allow traffic from our particular port like (port 5000 in this project).
