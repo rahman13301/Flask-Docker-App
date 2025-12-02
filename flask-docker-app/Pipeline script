@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Clone Repository') {
+            steps {
+                echo 'Cloning repository with full configuration...'
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/rahman13301/Flask-Docker-App.git',
+                        credentialsId: ''
+                    ]]
+                ])
+            }
+        }
+        
+        stage('Build & Deploy') {
+            steps {
+                sh '''
+                    echo "Current directory:"
+                    pwd
+                    ls -la
+                    
+                    cd flask-docker-app
+                    docker build -t flask-app .
+                    
+                    docker stop myapp || true
+                    docker rm myapp || true
+                    docker run -d --name myapp -p 5000:5000 flask-app
+                    
+                    sleep 40
+                    echo "Testing..."
+                    curl http://localhost:5000/ || docker logs myapp
+                '''
+            }
+        }
+    }
+}
