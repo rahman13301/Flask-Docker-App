@@ -88,7 +88,9 @@ sudo docker run -d -p 5000:5000 flask-docker-app
 
 
 
-- Browse with public ip of instance "public ip:5000" to get the result as shown below.
+- Browse with public ip of instance "public ip:5000" to get the result.
+
+- **Automated the CI/CD jenkins pipeline for flask-docker-app with the pipeline script**
 
   <img width="687" height="118" alt="image" src="https://github.com/user-attachments/assets/9992f3b8-60e6-4c79-803b-386975dd77d2" />
 
